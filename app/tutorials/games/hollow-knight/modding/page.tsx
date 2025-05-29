@@ -2,6 +2,36 @@ import React from 'react';
 import Link from 'next/link';
 import { FolderIcon, DocumentIcon } from '@heroicons/react/24/outline';
 
+const formatPathSegment = (segment: string): string => {
+  let namePart = segment;
+  let extensionPart = ''; // Files in directory listings typically don't show extensions in the path bar
+                        // but if they did, this logic handles it.
+  if (segment.includes('.')) {
+    const lastDotIndex = segment.lastIndexOf('.');
+    if (lastDotIndex > 0) {
+      namePart = segment.substring(0, lastDotIndex);
+      extensionPart = segment.substring(lastDotIndex);
+    }
+  }
+  return namePart
+    .replace(/[-_]/g, ' ')
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(' ');
+  // For directory pages, we generally don't want to show .md or other extensions in the path segments
+  // The last segment will be the directory name itself.
+};
+
+const buildDisplayPath = (segments: string[], isDirectory: boolean): string => {
+  const basePath = "C:\\SPIRE\\";
+  const formattedSegments = segments.map(formatPathSegment);
+  let displayPath = basePath + formattedSegments.join('\\');
+  if (isDirectory && !displayPath.endsWith('\\')) {
+    displayPath += '\\';
+  }
+  return displayPath;
+};
+
 const HKModdingTutorialsPage = () => {
   const items = [
     { name: '..', type: 'parent', path: '/tutorials/games/hollow-knight', size: '-', modified: '-' },
@@ -10,13 +40,20 @@ const HKModdingTutorialsPage = () => {
     // Future modding tutorial files will be listed here
   ];
 
+  // Path segments for this specific page
+  // Derived from app/tutorials/games/hollow-knight/modding/page.tsx
+  const pathSegmentsForTitle = ["tutorials", "games", "hollow-knight", "modding"];
+  const isDirectoryPage = true; // This is a directory page
+  const titleDisplayPath = buildDisplayPath(pathSegmentsForTitle, isDirectoryPage);
+
   return (
     <div className='min-h-screen bg-sky-800 text-white font-mono'> {/* Dark sky theme for Modding */}
-      <div className='bg-sky-700 border-b border-sky-600 px-4 py-2'>
-        <div className='text-sm'><span className='font-bold'>Hollow Knight Modding - SPIRE Tutorials</span></div>
+      <div className='bg-sky-700 border-b border-sky-600 px-4 py-2 flex justify-between items-center'>
+        <div className='text-sm'><span className='font-bold'>{titleDisplayPath}</span></div>
+        <Link href='/tutorials/games/hollow-knight' className='hover:underline text-sm'>✕ Close</Link>
       </div>
-      <div className='bg-sky-750 border-b border-sky-600 px-4 py-1'>
-        <div className='text-xs text-gray-300'>📁 C:\\SPIRE\\Tutorials\\Games\\Hollow Knight\\Modding\\</div>
+      <div className='bg-sky-750 border-b border-sky-600 px-4 py-1 text-xs'>
+        File Edit View Help
       </div>
       <main id='main-content' className='p-4'>
         <div className='flex justify-between items-center mb-4 pb-2 border-b border-sky-600'>
