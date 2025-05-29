@@ -15,11 +15,45 @@ async function getMarkdownContent() {
 const HKModdingApiGuidePage = async () => {
   const markdownContent = await getMarkdownContent();
 
+  const formatPathSegment = (segment: string): string => {
+    let namePart = segment;
+    let extensionPart = '';
+    if (segment.includes('.')) {
+      const lastDotIndex = segment.lastIndexOf('.');
+      if (lastDotIndex > 0) { // Ensure dot is not the first character
+        namePart = segment.substring(0, lastDotIndex);
+        extensionPart = segment.substring(lastDotIndex);
+      }
+    }
+    const processedNamePart = namePart
+      .replace(/[-_]/g, ' ')
+      .split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(' ');
+    return processedNamePart + extensionPart;
+  };
+
+  const buildDisplayPath = (segments: string[], isDirectory: boolean): string => {
+    const basePath = "C:\\SPIRE\\";
+    const formattedSegments = segments.map(formatPathSegment);
+    let displayPath = basePath + formattedSegments.join('\\');
+    if (isDirectory) {
+      displayPath += '\\';
+    }
+    return displayPath;
+  };
+
+  // Path segments for this specific page
+  // Derived from app/tutorials/games/hollow-knight/modding/hollow_knight_modding_api_guide.md
+  const pathSegmentsForTitle = ["tutorials", "games", "hollow-knight", "modding", "hollow_knight_modding_api_guide.md"];
+  const isDirectoryPage = false; // This is a file viewer page
+  const titleDisplayPath = buildDisplayPath(pathSegmentsForTitle, isDirectoryPage);
+
   return (
     <div className='min-h-screen bg-sky-800 text-white font-mono flex flex-col'>
       {/* Title Bar */}
       <div className='bg-sky-700 border-b border-sky-600 px-4 py-2 flex justify-between items-center shrink-0'>
-        <div className='text-sm'><span className='font-bold'>Hollow Knight Modding API Guide.md</span></div>
+        <div className='text-sm'><span className='font-bold'>{titleDisplayPath}</span></div>
         <Link href='/tutorials/games/hollow-knight/modding' className='text-sm hover:underline'>✕ Close</Link>
       </div>
 
