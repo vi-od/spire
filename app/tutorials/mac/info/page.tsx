@@ -1,13 +1,44 @@
 import React from 'react'
 import Link from 'next/link'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
-const MacInfoPage = () => {
+const macTutorialsInfoMarkdownContent = `
+# Mac Tutorials Directory
+
+This directory contains tutorials related to macOS, including:
+
+*   macOS system administration
+*   Terminal usage and command line tools
+*   Development environment setup (Xcode, Homebrew)
+*   macOS-specific software installation
+*   System optimization and maintenance
+*   Automation with Automator and AppleScript
+*   Security and privacy configuration
+*   Virtualization on Mac (Parallels, VMware)
+*   iOS development setup
+*   Mac-specific troubleshooting guides
+
+## File Types Expected:
+
+*   MD files for comprehensive tutorials
+*   TXT files for quick reference guides
+*   AppleScript files and examples
+*   Configuration files and templates
+
+---
+Last Updated: December 15, 2024
+Status: Ready for content
+Category: Operating Systems
+`
+
+const MacTutorialsInfoPage = () => {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 font-mono">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-800/10 font-mono">
       {/* Title Bar */}
       <div className="bg-gray-100 dark:bg-gray-800 border-b border-gray-300 dark:border-gray-600 px-4 py-2 flex justify-between">
         <div className="text-sm text-gray-700 dark:text-gray-300">
-          <span className="font-bold">info.txt - Mac Tutorials</span>
+          <span className="font-bold">info.md - Mac Tutorials</span>
         </div>
         <div className="text-sm text-gray-700 dark:text-gray-300">
           <Link href="/tutorials/mac" className="hover:underline">✕ Close</Link>
@@ -26,46 +57,20 @@ const MacInfoPage = () => {
 
       {/* Content */}
       <div className="p-6">
-        <div className="max-w-4xl mx-auto">
-          <pre className="whitespace-pre-wrap text-black dark:text-white leading-relaxed font-mono text-sm">
-{`Mac Tutorials Directory
-=======================
-
-This directory contains tutorials related to macOS, including:
-
-- macOS system administration
-- Terminal usage and command line tools
-- Development environment setup (Xcode, Homebrew)
-- macOS-specific software installation
-- System optimization and maintenance
-- Automation with Automator and AppleScript
-- Security and privacy configuration
-- Virtualization on Mac (Parallels, VMware)
-- iOS development setup
-- Mac-specific troubleshooting guides
-
-File Types Expected:
-- .md files for comprehensive tutorials
-- .txt files for quick reference guides
-- AppleScript files and examples
-- Configuration files and templates
-
-Last Updated: December 15, 2024
-Status: Ready for content
-Category: Operating Systems`}
-          </pre>
-        </div>
+        <article className="prose dark:prose-invert max-w-4xl mx-auto">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{macTutorialsInfoMarkdownContent}</ReactMarkdown>
+        </article>
       </div>
 
       {/* Status Bar */}
       <div className="fixed bottom-0 left-0 right-0 bg-gray-100 dark:bg-gray-800 border-t border-gray-300 dark:border-gray-600 px-4 py-1">
         <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400">
           <span>Mac Tutorials | Directory Information</span>
-          <span>info.txt | 1.0 KB</span>
+          <span>info.md | 1.0 KB</span>
         </div>
       </div>
     </div>
   )
 }
 
-export default MacInfoPage 
+export default MacTutorialsInfoPage 

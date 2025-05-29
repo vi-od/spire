@@ -5,7 +5,7 @@ import { FolderIcon, DocumentIcon } from '@heroicons/react/24/outline'
 const SwiftResourcesPage = () => {
   const items = [
     { name: '..', type: 'parent', path: '/resources/coding', size: '-', modified: '-' },
-    { name: 'info.txt', type: 'file', path: '/resources/coding/python/info', size: '1.1 KB', modified: '12/15/2024' },
+    { name: 'info.md', type: 'file', path: '/resources/coding/swift/info', size: '0.2 KB', modified: '12/15/2024' },
   ]
 
   return (

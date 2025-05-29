@@ -1,13 +1,53 @@
 import React from 'react'
 import Link from 'next/link'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+
+const macInfoMarkdownContent = `
+# Mac Resources Directory
+
+This directory contains macOS-related reference materials, including:
+
+*   macOS Terminal command references
+*   Homebrew package lists and guides
+*   System configuration templates
+*   Development environment setups
+*   macOS keyboard shortcuts and tips
+*   App Store alternatives and tools
+*   System optimization guides
+*   Automation scripts and workflows
+*   Hardware compatibility information
+*   macOS version comparison charts
+
+## Development Tools Covered:
+
+*   Xcode and iOS development
+*   Homebrew package management
+*   Docker for Mac
+*   Virtual machines and emulation
+*   Cross-platform development tools
+
+## File Types Expected:
+
+*   TXT files for quick references
+*   Configuration files and templates
+*   MD files for comprehensive guides
+*   AppleScript files and examples
+*   Automator workflows
+
+---
+Last Updated: December 15, 2024
+Status: Ready for content
+Category: Operating Systems
+`
 
 const MacResourcesInfoPage = () => {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 font-mono">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-800/10 font-mono">
       {/* Title Bar */}
       <div className="bg-gray-100 dark:bg-gray-800 border-b border-gray-300 dark:border-gray-600 px-4 py-2 flex justify-between">
         <div className="text-sm text-gray-700 dark:text-gray-300">
-          <span className="font-bold">info.txt - Mac Resources</span>
+          <span className="font-bold">info.md - Mac Resources</span>
         </div>
         <div className="text-sm text-gray-700 dark:text-gray-300">
           <Link href="/resources/mac" className="hover:underline">✕ Close</Link>
@@ -26,48 +66,16 @@ const MacResourcesInfoPage = () => {
 
       {/* Content */}
       <div className="p-6">
-        <div className="max-w-4xl mx-auto">
-          <pre className="whitespace-pre-wrap text-black dark:text-white leading-relaxed font-mono text-sm">
-{`Mac Resources Directory
-=======================
-
-This directory contains macOS reference materials, including:
-
-- Terminal command references
-- Homebrew package management guides
-- System configuration templates
-- macOS development environment setups
-- Security and privacy configuration guides
-- AppleScript and automation resources
-- Virtualization guides (Parallels, VMware)
-- iOS development resources
-- Mac-specific troubleshooting references
-- System optimization guides
-
-Supported Systems:
-- macOS Monterey and later
-- Intel and Apple Silicon Macs
-- iOS development environments
-- Cross-platform development setups
-
-File Types Expected:
-- .md files for comprehensive reference guides
-- .txt files for quick command references
-- AppleScript files and examples
-- Configuration files and templates
-
-Last Updated: December 15, 2024
-Status: Ready for content
-Category: Operating Systems`}
-          </pre>
-        </div>
+        <article className="prose dark:prose-invert max-w-4xl mx-auto">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{macInfoMarkdownContent}</ReactMarkdown>
+        </article>
       </div>
 
       {/* Status Bar */}
       <div className="fixed bottom-0 left-0 right-0 bg-gray-100 dark:bg-gray-800 border-t border-gray-300 dark:border-gray-600 px-4 py-1">
         <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400">
           <span>Mac Resources | Directory Information</span>
-          <span>info.txt | 1.0 KB</span>
+          <span>info.md | 1.0 KB</span>
         </div>
       </div>
     </div>

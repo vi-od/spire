@@ -5,7 +5,7 @@ import { FolderIcon, DocumentIcon } from '@heroicons/react/24/outline'
 const SqlResourcesPage = () => {
   const items = [
     { name: '..', type: 'parent', path: '/resources/coding', size: '-', modified: '-' },
-    { name: 'info.txt', type: 'file', path: '/resources/coding/sql/info', size: '0.9 KB', modified: '12/15/2024' },
+    { name: 'info.md', type: 'file', path: '/resources/coding/sql/info', size: '0.2 KB', modified: '12/15/2024' },
   ]
 
   return (

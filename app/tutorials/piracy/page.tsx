@@ -5,7 +5,7 @@ import { FolderIcon, DocumentIcon } from '@heroicons/react/24/outline'
 const PiracyTutorialsPage = () => {
   const items = [
     { name: '..', type: 'parent', path: '/tutorials', size: '-', modified: '-' },
-    { name: 'info.txt', type: 'file', path: '/tutorials/piracy/info', size: '1.4 KB', modified: '12/15/2024' },
+    { name: 'info.md', type: 'file', path: '/tutorials/piracy/info', size: '1.2 KB', modified: '12/15/2024' },
   ]
 
   return (

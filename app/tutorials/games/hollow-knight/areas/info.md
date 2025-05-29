@@ -1,0 +1,1 @@
+# Hollow Knight Area Tutorials Information\n\nThis section provides walkthroughs and guides for the diverse areas within Hollow Knight.\n\nDiscover secrets, collectibles, and pathways through Hallownest.\n\n---\nLast Updated: December 16, 2024\nStatus: Placeholder\nCategory: Game Area Tutorials\n 

@@ -1,0 +1,1 @@
+# HTML & CSS Resources Directory\n\nThis directory is intended for HTML and CSS programming resources.\n\nContent to be added.\n\n---\nLast Updated: December 15, 2024\nStatus: Placeholder\nCategory: Web Development\n 

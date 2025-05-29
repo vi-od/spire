@@ -5,7 +5,7 @@ import { FolderIcon, DocumentIcon } from '@heroicons/react/24/outline'
 const LinuxTutorialsPage = () => {
   const items = [
     { name: '..', type: 'parent', path: '/tutorials', size: '-', modified: '-' },
-    { name: 'info.txt', type: 'file', path: '/tutorials/linux/info', size: '1.1 KB', modified: '12/15/2024' },
+    { name: 'info.md', type: 'file', path: '/tutorials/linux/info', size: '1.0 KB', modified: '12/15/2024' },
   ]
 
   return (

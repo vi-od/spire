@@ -5,7 +5,7 @@ import { FolderIcon, DocumentIcon } from '@heroicons/react/24/outline'
 const GamesResourcesPage = () => {
   const items = [
     { name: '..', type: 'parent', path: '/resources', size: '-', modified: '-' },
-    { name: 'info.txt', type: 'file', path: '/resources/games/info', size: '1.2 KB', modified: '12/15/2024' },
+    { name: 'info.md', type: 'file', path: '/resources/games/info', size: '1.2 KB', modified: '12/15/2024' },
   ]
 
   return (

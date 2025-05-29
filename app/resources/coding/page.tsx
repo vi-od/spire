@@ -21,7 +21,7 @@ const CodingResourcesPage = () => {
     { name: 'SQL', type: 'folder', path: '/resources/coding/sql', size: '-', modified: '12/15/2024' },
     { name: 'Swift', type: 'folder', path: '/resources/coding/swift', size: '-', modified: '12/15/2024' },
     { name: 'TypeScript', type: 'folder', path: '/resources/coding/typescript', size: '-', modified: '12/15/2024' },
-    { name: 'info.txt', type: 'file', path: '/resources/coding/info', size: '1.3 KB', modified: '12/15/2024' },
+    { name: 'info.md', type: 'file', path: '/resources/coding/info', size: '1.3 KB', modified: '12/15/2024' },
   ]
 
   return (

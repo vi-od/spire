@@ -5,7 +5,7 @@ import { FolderIcon, DocumentIcon } from '@heroicons/react/24/outline'
 const HtmlCssResourcesPage = () => {
   const items = [
     { name: '..', type: 'parent', path: '/resources/coding', size: '-', modified: '-' },
-    { name: 'info.txt', type: 'file', path: '/resources/coding/html-css/info', size: '1.0 KB', modified: '12/15/2024' },
+    { name: 'info.md', type: 'file', path: '/resources/coding/html-css/info', size: '0.2 KB', modified: '12/15/2024' },
   ]
 
   return (

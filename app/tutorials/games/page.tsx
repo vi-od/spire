@@ -5,7 +5,8 @@ import { FolderIcon, DocumentIcon } from '@heroicons/react/24/outline'
 const GamesTutorialsPage = () => {
   const items = [
     { name: '..', type: 'parent', path: '/tutorials', size: '-', modified: '-' },
-    { name: 'info.txt', type: 'file', path: '/tutorials/games/info', size: '1.2 KB', modified: '12/15/2024' },
+    { name: 'info.md', type: 'file', path: '/tutorials/games/info', size: '1.0 KB', modified: '12/15/2024' },
+    { name: 'Hollow Knight', type: 'folder', path: '/tutorials/games/hollow-knight', size: '-', modified: '12/16/2024' },
   ]
 
   return (
@@ -72,6 +73,11 @@ const GamesTutorialsPage = () => {
                         <FolderIcon className="h-4 w-4 mr-2 text-yellow-600 dark:text-yellow-400" />
                         <span className="text-gray-600 dark:text-gray-400">{item.name}</span>
                       </>
+                    ) : item.type === 'folder' ? (
+                      <>
+                        <FolderIcon className="h-4 w-4 mr-2 text-yellow-500 dark:text-yellow-400" />
+                        <span className="text-yellow-700 dark:text-yellow-200">{item.name}</span>
+                      </>
                     ) : (
                       <>
                         <DocumentIcon className="h-4 w-4 mr-2 text-blue-600 dark:text-blue-400" />
@@ -80,7 +86,7 @@ const GamesTutorialsPage = () => {
                     )}
                   </div>
                   <div className="text-gray-600 dark:text-gray-400">
-                    {item.type === 'parent' ? 'Parent Directory' : 'Tutorial Information'}
+                    {item.type === 'parent' ? 'Parent Directory' : item.type === 'folder' ? 'Sub-category' : 'Tutorial Information'}
                   </div>
                   <div className="text-gray-600 dark:text-gray-400">{item.size}</div>
                   <div className="text-gray-600 dark:text-gray-400">{item.modified}</div>
@@ -93,7 +99,7 @@ const GamesTutorialsPage = () => {
         {/* Status bar */}
         <div className="mt-4 pt-2 border-t border-gray-300 dark:border-gray-600">
           <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400">
-            <span>{items.length - 1} file(s) in directory</span>
+            <span>{items.length - 1} item(s) in directory</span>
             <span>SPIRE v1.0 | Games Tutorials</span>
           </div>
         </div>
