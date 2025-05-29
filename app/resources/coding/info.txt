@@ -1,0 +1,37 @@
+Coding Resources Directory
+==========================
+
+This directory contains programming and development resources, including:
+
+- Code snippets and examples
+- Programming language cheat sheets
+- API documentation and references
+- Development tools and utilities
+- Framework guides and quick references
+- Algorithm implementations
+- Design pattern examples
+- Database query references
+- Debugging guides and tips
+- Performance optimization resources
+
+Programming Languages Covered:
+- JavaScript/TypeScript
+- Python
+- Java
+- C/C++
+- Go
+- Rust
+- PHP
+- Ruby
+- And many more...
+
+File Types Expected:
+- .md files for documentation
+- .txt files for quick references
+- Code files in various languages
+- Configuration templates
+- Tool setup guides
+
+Last Updated: December 15, 2024
+Status: Ready for content
+Category: Programming & Development 

@@ -1,0 +1,35 @@
+Linux Resources Directory
+=========================
+
+This directory contains Linux-related reference materials, including:
+
+- Command reference guides and cheat sheets
+- Linux distribution comparison charts
+- Package manager quick references
+- System configuration templates
+- Shell scripting examples
+- Service and daemon configurations
+- Network setup references
+- Security configuration guides
+- Performance monitoring tools list
+- Linux certification study materials
+
+Distributions Covered:
+- Ubuntu/Debian
+- CentOS/RHEL/Fedora
+- Arch Linux
+- openSUSE
+- Gentoo
+- Alpine Linux
+- And many more...
+
+File Types Expected:
+- .txt files for quick references
+- Configuration files and templates
+- .md files for comprehensive guides
+- Shell scripts and examples
+- System configuration files
+
+Last Updated: December 15, 2024
+Status: Ready for content
+Category: Operating Systems 

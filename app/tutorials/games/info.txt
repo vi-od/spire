@@ -1,0 +1,25 @@
+Games Tutorials Directory
+========================
+
+This directory contains tutorials related to gaming, including:
+
+- Game development tutorials
+- Modding guides and techniques
+- Game configuration and optimization
+- Performance tuning guides
+- Gaming platform setup (Steam, Epic, etc.)
+- Emulation setup and configuration
+- Game server administration
+- Multiplayer gaming setup guides
+- Streaming and recording game content
+- Game engine tutorials (Unity, Unreal, etc.)
+
+File Types Expected:
+- .md files for comprehensive tutorials
+- .txt files for quick reference guides
+- Configuration files and examples
+- Script files for automation
+
+Last Updated: December 15, 2024
+Status: Ready for content
+Category: Gaming & Development 
